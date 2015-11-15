@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<plugin id="facebook-plugin" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+<plugin id="cordova-facebook-misc-plugin" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
     <name>facebook plugin</name>
     <author>PhotoMania Team</author>
     <description>Plugin with the facebook sdks for ios & android and binding from native to js for some actions</description>
