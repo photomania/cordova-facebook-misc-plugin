@@ -7,8 +7,8 @@ import com.facebook.FacebookSdk;
 
 public class FacebookPlugin extends CordovaPlugin {
 	protected void pluginInitialize() {
-		FacebookSdk.setIsDebugEnabled(true);
-		FacebookSdk.addLoggingBehavior(LoggingBehavior.APP_EVENTS);
+		// FacebookSdk.setIsDebugEnabled(true);
+		// FacebookSdk.addLoggingBehavior(LoggingBehavior.APP_EVENTS);
 	}
 
     public void onPause(boolean multitasking) {

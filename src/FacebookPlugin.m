@@ -13,7 +13,7 @@
 }
 
 - (void)handleDidBecomeActive:(NSNotification*)notification {
-    [FBSDKSettings enableLoggingBehavior:FBSDKLoggingBehaviorAppEvents];
+    // [FBSDKSettings enableLoggingBehavior:FBSDKLoggingBehaviorAppEvents];
     [FBSDKAppEvents activateApp];
 }
 
