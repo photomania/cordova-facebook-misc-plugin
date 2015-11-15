@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<plugin id="facebook-plugin" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>facebook plugin</name>
+    <author>PhotoMania Team</author>
+    <description>Plugin with the facebook sdks for ios & android and binding from native to js for some actions</description>
+    <keywords></keywords>
+    <license></license>
+
+    <platform name="android">
+        <preference name="FACEBOOK_APP_ID" />
+        <preference name="FACEBOOK_APP_NAME" />
+
+        <source-file src="src/FacebookPlugin.java" target-dir="src/com/photomania/cordova" />
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="PhotomaniaFacebook" >
+                <param name="android-package" value="com.photomania.cordova.FacebookPlugin"/>
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>        
+
+        <framework src="com.facebook.android:facebook-android-sdk:4.8+" />
+
+        <config-file target="res/values/strings.xml" parent="/resources">
+            <string name="facebook_app_id">$FACEBOOK_APP_ID</string>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET"/>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="application">
+            <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+            <activity android:name="com.facebook.FacebookActivity"
+                      android:configChanges=
+                             "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+                      android:theme="@android:style/Theme.Translucent.NoTitleBar"
+                      android:label="@string/app_name" />
+        </config-file>
+    </platform>
+
+     <platform name="ios">
+        <preference name="FACEBOOK_APP_ID" />
+        <preference name="FACEBOOK_APP_NAME" />
+
+        <source-file src="src/FacebookPlugin.m" />
+        <source-file src="src/FacebookPlugin.h" />
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="PhotomaniaFacebook" >
+                <param name="ios-package" value="FacebookPlugin"/>
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+         <framework src="FacebookSDKs-iOS-20151111/FBSDKCoreKit.framework" custom="true" />
+         <framework src="FacebookSDKs-iOS-20151111/Bolts.framework" custom="true" />
+         <framework src="FacebookSDKs-iOS-20151111/FBAudienceNetwork.framework" custom="true" />
+         <framework src="FacebookSDKs-iOS-20151111/FBSDKLoginKit.framework" custom="true" />
+         <framework src="FacebookSDKs-iOS-20151111/FBSDKMessengerShareKit.framework" custom="true" />
+         <framework src="FacebookSDKs-iOS-20151111/FBSDKShareKit.framework" custom="true" />
+         <framework src="FacebookSDKs-iOS-20151111/FacebookSDKStrings.bundle" custom="true" />
+
+          <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+            <array>
+              <dict>
+                <key>CFBundleURLSchemes</key>
+                <array>
+                  <string>fb$FACEBOOK_APP_ID</string>
+                </array>
+              </dict>
+            </array>
+          </config-file>
+
+          <config-file target="*-Info.plist" parent="FacebookAppID">
+            <string>$FACEBOOK_APP_ID</string>
+          </config-file>
+
+          <config-file target="*-Info.plist" parent="FacebookDisplayName">
+            <string>$FACEBOOK_APP_NAME</string>
+          </config-file>
+    </platform>
+</plugin>
