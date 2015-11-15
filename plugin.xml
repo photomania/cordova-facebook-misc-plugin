@@ -54,7 +54,8 @@
 
          <framework src="FacebookSDKs-iOS-20151111/FBSDKCoreKit.framework" custom="true" />
          <framework src="FacebookSDKs-iOS-20151111/Bolts.framework" custom="true" />
-         <framework src="FacebookSDKs-iOS-20151111/FBAudienceNetwork.framework" custom="true" />
+         <!-- Exclude FBAudienceNetwork because its installed as part of cordova-facebook-audnet-sdk plugin -->
+         <!-- <framework src="FacebookSDKs-iOS-20151111/FBAudienceNetwork.framework" custom="true" /> -->
          <framework src="FacebookSDKs-iOS-20151111/FBSDKLoginKit.framework" custom="true" />
          <framework src="FacebookSDKs-iOS-20151111/FBSDKMessengerShareKit.framework" custom="true" />
          <framework src="FacebookSDKs-iOS-20151111/FBSDKShareKit.framework" custom="true" />
