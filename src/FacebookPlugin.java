@@ -6,18 +6,18 @@ import com.facebook.LoggingBehavior;
 import com.facebook.FacebookSdk;
 
 public class FacebookPlugin extends CordovaPlugin {
-	protected void pluginInitialize() {
-		// FacebookSdk.setIsDebugEnabled(true);
-		// FacebookSdk.addLoggingBehavior(LoggingBehavior.APP_EVENTS);
-	}
+    protected void pluginInitialize() {
+        // FacebookSdk.setIsDebugEnabled(true);
+        // FacebookSdk.addLoggingBehavior(LoggingBehavior.APP_EVENTS);
+    }
 
     public void onPause(boolean multitasking) {
-		AppEventsLogger.deactivateApp(this.cordova.getActivity());
-		super.onPause(multitasking);
+        AppEventsLogger.deactivateApp(this.cordova.getActivity());
+        super.onPause(multitasking);
     }
 
     public void onResume(boolean multitasking) {
-		AppEventsLogger.activateApp(this.cordova.getActivity());
-		super.onResume(multitasking);
+        AppEventsLogger.activateApp(this.cordova.getActivity());
+        super.onResume(multitasking);
     }
 }
