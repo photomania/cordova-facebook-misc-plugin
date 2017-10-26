@@ -2,7 +2,7 @@
 <plugin id="cordova-facebook-misc-plugin" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
     <name>facebook plugin</name>
     <author>PhotoMania Team</author>
-    <description>Plugin with the facebook sdks for ios & android and binding from native to js for some actions</description>
+    <description>Plugin with the facebook sdks for ios and android and binding from native to js for some actions</description>
     <keywords></keywords>
     <license></license>
 
@@ -16,7 +16,7 @@
                 <param name="android-package" value="com.photomania.cordova.FacebookPlugin"/>
                 <param name="onload" value="true" />
             </feature>
-        </config-file>        
+        </config-file>
 
         <framework src="com.facebook.android:facebook-android-sdk:4.8+" />
 
